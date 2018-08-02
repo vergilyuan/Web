@@ -1,0 +1,38 @@
+extends layout
+
+block scripts
+    script(src='/js/author.js')
+    link(rel='stylesheet', href='/stylesheets/author.css')
+
+block content
+    .main.container.text-center
+        .col-md-8.mx-auto.text-center
+            .alert.alert-warning.alertDiv
+                strong Warning!
+                |  No user are matched.
+
+            .input-group.mb-3
+                input.authorInput.form-control(type='text', placeholder="Author username", aria-label="Author username", aria-describedby='basic-addon2')
+                .input-group-append
+                    button#searchBtn.btn.btn-outline-secondary(type='button') Search
+
+            .card
+                .card-body
+                    .table-wrapper-2
+                        // Table
+                        table.titleTable
+                            thead
+                                tr.header.bg-primary.text-light
+                                    th(style='width:80%;') Author
+                            tbody#authorTableBody.authorTable
+
+            .card.my-4
+                .table-wrapper-2
+                    table.table.table-condensed(style='border-collapse:collapse;')
+                        thead
+                            tr
+                                th Title
+                                th Revisions
+
+                        tbody#dataTableBody
+
